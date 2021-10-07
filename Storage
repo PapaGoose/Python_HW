@@ -1,4 +1,4 @@
-```python
+```python```
 import argparse
 import os
 import tempfile
@@ -45,4 +45,4 @@ if args.value is not None:
     write(args.key, args.value)
 else:
     read(args.key)
-```
+```python```
