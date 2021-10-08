@@ -31,13 +31,16 @@ def write(key, value):
 
 def read(key):
     storage_path = os.path.join(tempfile.gettempdir(), 'storage.data')
-    with open(storage_path, 'r') as f:
-        dct = json.loads(f.read())
-        # Результат вывод
-        try:
-            print(', '.join(dct[key]))
-        except:
-            print(None)
+    if not os.path.isfile(storage_path):
+        print(None)
+    else:
+        with open(storage_path, 'r') as f:
+            dct = json.loads(f.read())
+            # Результат вывод
+            try:
+                print(', '.join(dct[key]))
+            except:
+                print(None)
 
 
 if args.value is not None:
